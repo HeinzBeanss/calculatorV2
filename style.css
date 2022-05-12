@@ -51,6 +51,11 @@ h1 {
     min-width: 100px;
 }
 
+.operatorButton {
+    min-height: 100px;
+    min-width: 100px;
+}
+
 .largeButton {
     min-height: 100px;
     min-width: 205px;
