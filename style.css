@@ -1,5 +1,6 @@
 html {
     background-color: #0f0f0f;
+    
 }
 
 body {
@@ -12,6 +13,7 @@ body {
     color: white;
     text-align: center;
     font-size: 22px;
+    padding-top: 80px;
     
 }
 
@@ -24,8 +26,7 @@ h1 {
     flex: 1 1 auto;
     flex-direction: column;
     color: white;
-    align-items: flex-start;    /* change */
-    margin-left: 50px;
+    align-items: center; 
     justify-content: center;
 }
 
@@ -33,8 +34,9 @@ h1 {
     color: white;
     text-align: center;
     flex-shrink: 0;
-    font-size: 22px;
-    padding: 10px;
+    font-size: 16px;
+    padding-top: 10px;
+    border-bottom: #bcd7ff solid 2px;
 }
 
 .calcButtons{
@@ -46,9 +48,14 @@ h1 {
     
 }
 
+.smallButton:hover, .operatorButton:hover, .largeButton:hover {
+    background-color: #bcd7ff;
+}
+
 .smallButton {
     min-height: 100px;
     min-width: 100px;
+    
 }
 
 .operatorButton {
@@ -67,12 +74,13 @@ h1 {
     text-align: right;
     font-size: 50px;
     align-self: flex-end;
+    border-bottom: #bcd7ff solid 2px;
 }
 
 .selected {
     min-height: 100px;
     min-width: 100px;
-    background-color: #e71717;
+    background-color: #bcd7ff;
 }
 
 .notselected {

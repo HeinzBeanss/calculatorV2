@@ -1,31 +1,3 @@
-/* function add(OTHERnum1, OTHERnum2) { 
-    tempnum = (OTHERnum1 + OTHERnum2);
-    display.textContent = Math.round((tempnum + Number.EPSILON) * 100) / 100;
-    num1 = Math.round((tempnum + Number.EPSILON) * 100) / 100;
-};
-
-function subtract(OTHERnum1, OTHERnum2) { 
-    tempnum = (OTHERnum1 - OTHERnum2);
-    display.textContent = Math.round((tempnum + Number.EPSILON) * 100) / 100;
-    num1 = Math.round((tempnum + Number.EPSILON) * 100) / 100;
-};
-
-function multiply(OTHERnum1, OTHERnum2) { 
-    tempnum = (OTHERnum1 * OTHERnum2);
-    display.textContent = Math.round((tempnum + Number.EPSILON) * 100) / 100;
-    num1 = Math.round((tempnum + Number.EPSILON) * 100) / 100;
-};
-
-function divide(OTHERnum1, OTHERnum2) { 
-    if (OTHERnum2 == 0) {
-        display.textContent = "Can't divide by 0...";
-    } else {
-        tempnum = (OTHERnum1 / OTHERnum2);
-        display.textContent = Math.round((tempnum + Number.EPSILON) * 100) / 100;
-        num1 = Math.round((tempnum + Number.EPSILON) * 100) / 100;
-    }
-}; */
-
 function clear() {
     display.textContent = "";
     num1 = null;
@@ -88,18 +60,13 @@ function operate() {
 
     OTHERnum1 = null;
     operatorSelected = "";
-    
 }
 }
 
 num1 = null;
 OTHERnum1 = null;
 OTHERnum2 = null;
-
 operatorSelected = "empty";
-
-// think about returning values, and when / where they should be returned. 
-
 
 const display = document.querySelector(".userInput");
 display.textContent = "";
@@ -116,6 +83,10 @@ numberButton.forEach(button => {
             OTHERnum1 = num1;
             num1 = null;
             display.textContent = "";
+            addElement.classList.remove("selected");
+            subtractElement.classList.remove("selected");
+            multiplyElement.classList.remove("selected");
+            divideElement.classList.remove("selected");
 
             if (display.textContent.length < 16) {
                 if (button.id === "." && display.textContent.includes(".") === true) {
@@ -134,15 +105,11 @@ numberButton.forEach(button => {
             } else {
             }
             }
-    
     })
-
 })
-
 
 const clearButton = document.querySelector(".clear");
 clearButton.addEventListener("click", clear);
-
 
 const operatorButton = document.querySelectorAll(".operatorButton");
 operatorButton.forEach(operator => {
@@ -159,26 +126,7 @@ operatorButton.forEach(operator => {
             }
             
             operatorSelected = (operator.id);
-    
-            
-    
-            /* for (i = 0; i < operator.length; i++) {
-                operator[i].classList.remove("selected");
-            } */
-    
             operator.classList.add("selected");
-            
-    
-            // operator.classList.remove = "selected"
-            console.log(operatorSelected);
-        
-           /* if (num1 === null) {
-                num1 = Number(display.textContent);
-                display.textContent = "";
-            } else {
-                num2 = Number(display.textContent);
-            } */
-    
         }
         
     })
@@ -201,13 +149,6 @@ backspace.addEventListener("click", (e) => {
     }
     
 })
-/*
-think about  display number and how to refresh it if a calculation has
-already been made.
-think about num1 and num2, and how to make it possible to keep adding to a 
-number.
-*/
-
 
 const addElement = document.querySelector("#add");
 addElement.addEventListener("click", (e) => {
