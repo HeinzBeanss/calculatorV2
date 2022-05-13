@@ -55,17 +55,20 @@ h1 {
 .smallButton {
     min-height: 100px;
     min-width: 100px;
+    font-size: 32px;
     
 }
 
 .operatorButton {
     min-height: 100px;
     min-width: 100px;
+    font-size: 32px;
 }
 
 .largeButton {
     min-height: 100px;
     min-width: 205px;
+    font-size: 28px;
 }
 
 .userInput {
