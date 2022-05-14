@@ -1,5 +1,5 @@
 function clear() {
-    display.textContent = "";
+    display.textContent = "0";
     num1 = null;
     OTHERnum1 = null;
     OTHERnum2 = null;
@@ -69,7 +69,7 @@ OTHERnum2 = null;
 operatorSelected = "empty";
 
 const display = document.querySelector(".userInput");
-display.textContent = "";
+display.textContent = "0";
 
 const numberButton = document.querySelectorAll(".numberButton");
 numberButton.forEach(button => {
@@ -78,6 +78,13 @@ numberButton.forEach(button => {
         if (display.textContent == "Can't divide by 0...") {
             clear();
         }
+
+        if (display.textContent === "0") {  
+            display.textContent = "";
+        } else { 
+            
+        }
+       //  && button.id === "."
 
         if (num1 !== null) {
             OTHERnum1 = num1;
@@ -107,6 +114,7 @@ numberButton.forEach(button => {
             }
     })
 })
+
 
 const clearButton = document.querySelector(".clear");
 clearButton.addEventListener("click", clear);
@@ -142,10 +150,16 @@ backspace.addEventListener("click", (e) => {
         clear();
     }
 
+
+
     if (num1 !== null) {
     } else {
         tempstring = display.textContent;
         display.textContent = tempstring.slice(0, -1);
+        
+        if (display.textContent === "") {
+            display.textContent = "0";
+        }
     }
     
 })
